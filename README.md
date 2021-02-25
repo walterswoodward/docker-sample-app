@@ -38,3 +38,13 @@
 8. Confirm in Docker Application that two containers are running
    1. The tutorial app container that you created at the very beginning with `docker run -dp 80:80 docker/getting-started`
    2. The launched application that you created with `docker run -dp 3000:3000 getting-started`
+## Part 3: Update the Application
+1. Update message rendered when no items have been added to `You have no todo items yet! Add one above!`.
+2. Rebuild application with the updated version of the image:
+   1. `docker build -t getting-started .`
+3. Remove old container and add a new one can be added
+   1. `docker ps`: To find image container ID
+   2. `docker stop <the-container-id>`
+   3. `docker rm <the-container-id>`
+   4. `docker run -dp 3000:3000 getting-started`
+4. Refresh your browser on http://localhost:3000 to see updated message
