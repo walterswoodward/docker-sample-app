@@ -15,7 +15,10 @@
       3. In general, Docker's Official Images "provide essential base OS repos (e.g. ubuntu, centos) that serve as the starting point for the majority of users"
    2. [`WORKDIR`](https://docs.docker.com/engine/reference/builder/#workdir)
       1. sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile
-   3. `COPY`
+   3. [`COPY . .`](https://docs.docker.com/engine/reference/builder/#copy)
+      1. Copies new files or directories:
+         1. **from** the first provided "src" path `.` (current directory on host machine)
+         2. **to** the second provided "dest" path `.`, a path relative (no leading `/`) to `WORKDIR`: `/app`
    4. [`RUN`](https://docs.docker.com/engine/reference/builder/#run)
       1. Will execute any commands in a new layer on top of the current image and commit the results.
    5. [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd)
